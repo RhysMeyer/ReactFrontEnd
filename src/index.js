@@ -25,7 +25,7 @@ class DeleteFilm extends React.Component {
 
     axios
       .delete(
-        `http://localhost:8080/index/film/delete?id=${this.props.film.film_id}`
+        `http://54.235.49.250:8080/index/film/delete?id=${this.props.film.film_id}`
       )
       .then((response) => {
         console.log(response);
@@ -506,7 +506,7 @@ class UpdateFilmPopup extends React.Component {
       axios
       .put(
         //`http://localhost:8080/index/Film/Add?title=Testing&description=hello?&release_year=2001&length=10&rating=PG&language_id=1&special_features=Trailers&rental_duration=100&replacement_cost=9.99`
-        `http://localhost:8080/index/film/update?film_id=${this.props.film.film_id}&title=${this.state.title}&description=${this.state.description}?&release_year=${this.state.release_year}&length=${this.state.length}&rating=PG&language_id=${this.state.language_id}&special_features=${this.state.special_features}&rental_duration=${this.state.rental_duration}&replacement_cost=${this.state.replacement_cost}`
+        `http://54.235.49.250:8080/index/film/update?film_id=${this.props.film.film_id}&title=${this.state.title}&description=${this.state.description}?&release_year=${this.state.release_year}&length=${this.state.length}&rating=PG&language_id=${this.state.language_id}&special_features=${this.state.special_features}&rental_duration=${this.state.rental_duration}&replacement_cost=${this.state.replacement_cost}`
       )
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
@@ -715,7 +715,7 @@ class AddFilmPopup extends React.Component {
 
       axios
       .post(
-                `http://localhost:8080/index/film/add?title=${this.state.title}&description=${this.state.description}&release_year=${this.state.releaseYear}&length=${this.state.length}&rating=PG&language_id=${this.state.languageID}&special_features=${this.state.specialFeatures}&rental_duration=${this.state.rentalDuration}&replacement_cost=${this.state.replacementCost}`
+                `http://54.235.49.250:8080/index/film/add?title=${this.state.title}&description=${this.state.description}&release_year=${this.state.releaseYear}&length=${this.state.length}&rating=PG&language_id=${this.state.languageID}&special_features=${this.state.specialFeatures}&rental_duration=${this.state.rentalDuration}&replacement_cost=${this.state.replacementCost}`
       )
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
@@ -806,7 +806,7 @@ class FilmTable extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/index/film/all")
+      .get("http://54.235.49.250:8080/index/film/all")
       .then((response) => this.setState({ filmPackages: response.data }));
   }
 
